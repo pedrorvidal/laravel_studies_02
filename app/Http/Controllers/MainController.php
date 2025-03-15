@@ -10,6 +10,8 @@ class MainController extends Controller
     //
     public function showView(): View
     {
+        return view('admin.newPage3', ['name' => 'Pedro Vidal']);
+
         //método 1
         // $data = [
         //     'name' => 'John Doe',
@@ -27,8 +29,8 @@ class MainController extends Controller
         // return view('admin.newPage3')->with('name', 'Pedro Vidal')->with('phone', 222222);
 
         //método 4 - pesquisa se existem as variáveis do compact em outras parte do código, pra pegar seu valor
-        $name = 'Pedro Vidal';
-        $phone = 222222;
-        return view('admin.newPage3', compact('name', 'phone'));
+        // $name = 'Pedro Vidal';
+        // $phone = 222222;
+        // return view('admin.newPage3', compact('name', 'phone'));
     }
 }
