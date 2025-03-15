@@ -2,24 +2,26 @@
 
 @section('content')
     <h2 class="display-1 text-center">Hello home</h2>
-    {{-- empty --}}
-    @empty($value)
-        <h2>Não existe</h2>
-    @else
-        <h2>Existe</h2>
-    @endempty
+    @for ($i = 0; $i < 5; $i++)
+        <h2>Hello {{ $i }}</h2>
+    @endfor
 
-    {{-- isset --}}
-    @isset($values)
-        <h2>Existe a variável</h2>
-    @else
-        <h2>Não existe a variável</h2>
-    @endisset
+    @foreach ($cities as $city)
+        <h2>{{ $city }}</h2>
+    @endforeach
 
-    {{-- unless --}}
-    @unless ($value != 100)
-        <h2>OK</h2>
-    @else
-        <h2>Não existe</h2>
-    @endunless
+    {{-- ciclo foreach com um fallback caso esteja vazio o array pra ser iterado --}}
+    @forelse ($names as $name)
+        <h2>{{ $name }}</h2>
+    @empty
+        <h2>Names está vazio</h2>
+    @endforelse
+
+    @while ($indice < 10)
+        <h2>{{ $indice }}</h2>
+
+        @php
+            $indice++;
+        @endphp
+    @endwhile
 @endsection

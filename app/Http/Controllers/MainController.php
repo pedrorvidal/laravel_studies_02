@@ -13,7 +13,8 @@ class MainController extends Controller
         $data = [
             'value' => 100,
             'cities' => ['New York', 'Los Angeles', 'Chicago'],
-            'names' => []jk
+            'names' => ['John', 'Jane', 'Doe'],
+            'indice' => 1
         ];
         return view('home', $data);
     }
