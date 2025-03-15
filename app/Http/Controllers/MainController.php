@@ -10,7 +10,7 @@ class MainController extends Controller
     //
     public function showView(): View
     {
-        return view('admin.newPage3', ['value' => 80]);
+        return view('admin.newPage3', ['value' => 100]);
 
         //método 1
         // $data = [
