@@ -26,4 +26,14 @@ class MainController extends Controller
         ]);
         echo "formulario submetido com sucesso";
     }
+    public function setSession(): view
+    {
+        session(['name' => 'John Doe']);
+        return view('home');
+    }
+    public function clearSession(): view
+    {
+        session()->forget('name');
+        return view('home');
+    }
 }
